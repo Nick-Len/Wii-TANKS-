@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(dir);
         direction = dir;
         speed = spd;
-
+        //shotCounter(-1);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,6 +67,7 @@ public class Bullet : MonoBehaviour
         cCollider.enabled = false;
         bActive = false;
         timer = 0;
+        //shotCounter(1);
         //gameObject.SetActive(false);
     }
 
