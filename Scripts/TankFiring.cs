@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
+[RequireComponent(typeof(AudioSource))]
 public class TankFiring : MonoBehaviour
 {
     [SerializeField]
-    private int bulletCacheCount = 100;
+    private AudioSource aSource;
     [SerializeField]
-    private float speed = 5;
+    private int bulletCacheCount = 5;
     [SerializeField]
-    private float firrate = 0.1f;
+    private float speed = 10;
+    [SerializeField]
+    private float firrate = 0.2f;
     [SerializeField]
     private Transform spawnPoint;
     [SerializeField]
     private GameObject bulletPrefab;
-    [SerializeField]
-    private Transform target;
     private List<Bullet> bullets = new List<Bullet>();
+    private float timer = 0f;
 
     private bool bActive;
+    private bool bTimer;
+    private PlayerInput pInput;
 
-    
 
     //Called once per session
     private void Start()
@@ -35,49 +39,58 @@ public class TankFiring : MonoBehaviour
         {
             bullet.gameObject.SetActive(false);
         }
-
-        bActive = true;
-        StartCoroutine(nameof(Firing));
-        StartCoroutine(nameof(Aiming));
+        
+        pInput = new PlayerInput();
+        pInput.Enable();
+        //bActive = true;
+        bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
+        //StartCoroutine(nameof(Firing));
     }
-
-    IEnumerator Aiming()
+    private void Update()
     {
-        Vector3 direction;
-        while(bActive)
-        {
-            direction = target.position - transform.position;
-            direction.y = 0;
-            transform.rotation = Quaternion.LookRotation(direction);
-            yield return new WaitForEndOfFrame();
-        }
+        bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
     }
-
-    IEnumerator Firing()
+    void FixedUpdate()
     {
-        //Bullet bullet;
-        while(bActive)
+        if (bActive)
         {
-            yield return new WaitForSeconds(firrate);
-
-            foreach(Bullet b in bullets)
+            if (bTimer)
             {
-                if(!b.BActive)
+                timer += Time.fixedDeltaTime;
+                if (timer >= firrate)
                 {
-                    b.gameObject.SetActive(true);
-                    b.transform.position = spawnPoint.position;
-                    b.Activate(speed, transform.forward);
-                    break;
+                    bTimer = false;
+                    timer = 0;
                 }
             }
-
-
-
-            /*bullet = Instantiate(bulletPrefab,spawnPoint).GetComponent<Bullet>();
-            bullet.transform.localPosition = Vector3.zero; 
-            bullet.transform.parent = null;
-            bullet.Activate(speed, transform.forward);*/
+            else
+            {
+                Fire();
+                bTimer = true;
+            }
         }
+    }
+
+    private void Fire()
+    {
+        foreach (Bullet b in bullets)
+        {
+            if (!b.BActive)
+            {
+                b.gameObject.SetActive(true);
+                b.transform.position = spawnPoint.position;
+                b.Activate(speed, transform.forward);
+                aSource.Play();
+                bActive = false;
+                break;
+            }
+        }
+
+
+                /*bullet = Instantiate(bulletPrefab,spawnPoint).GetComponent<Bullet>();
+                bullet.transform.localPosition = Vector3.zero; 
+                bullet.transform.parent = null;
+                bullet.Activate(speed, transform.forward);*/
 
     }
 }

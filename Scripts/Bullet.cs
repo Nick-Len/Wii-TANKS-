@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(AudioSource))]
 public class Bullet : MonoBehaviour
@@ -44,6 +45,7 @@ public class Bullet : MonoBehaviour
         bActive = true;
         mRenderer.enabled = true;
         cCollider.enabled = true;
+        transform.rotation = Quaternion.LookRotation(dir);
         direction = dir;
         speed = spd;
 
