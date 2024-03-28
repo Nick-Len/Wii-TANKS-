@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1167860568880975891}
   - component: {fileID: 4922645158769277610}
   - component: {fileID: 8297719348155525943}
+  - component: {fileID: -2488482495622785920}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -101,11 +102,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7204647971529134275, guid: 901e263d56f02fd4ca0ae3fdf6ffef51, type: 3}
 --- !u!82 &4922645158769277610
@@ -120,7 +121,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 665d07de4d70b0d4cb299d31ae8a36cf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -219,3 +220,30 @@ MonoBehaviour:
   mRenderer: {fileID: 2986951197624961007}
   cCollider: {fileID: 1167860568880975891}
   aSource: {fileID: 4922645158769277610}
+--- !u!54 &-2488482495622785920
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719282555294203540}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
