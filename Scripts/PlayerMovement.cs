@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 hRotation;
     private Vector3 tRotation;
     private int invert;
-    private int deadzone;
+
 
     void Start()
     {
@@ -27,22 +27,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         invert = 1;
-        deadzone = 1;
-        if (pInput.Player.Movement.ReadValue<float>() < 0.25f && pInput.Player.Movement.ReadValue<float>() > -0.25f)
-            deadzone = 0;
-        direction = transform.forward * pInput.Player.Movement.ReadValue<float>() * deadzone;
+        direction = transform.forward * pInput.Player.Movement.ReadValue<float>();
         transform.localPosition += direction * speed * Time.deltaTime;
         if (pInput.Player.Movement.ReadValue<float>() < 0f)
             invert = -1;
-        deadzone = 1;
-        if (pInput.Player.Turn.ReadValue<float>() < 0.15f && pInput.Player.Turn.ReadValue<float>() > -0.15f)
-            deadzone = 0;
-        hRotation = new Vector3(0, pInput.Player.Turn.ReadValue<float>() * turnSpeed * Time.deltaTime * invert * deadzone + hRotation.y, 0);
+        hRotation = new Vector3(0, pInput.Player.Turn.ReadValue<float>() * turnSpeed * Time.deltaTime * invert + hRotation.y, 0);
         transform.rotation = Quaternion.Euler(hRotation);
-        deadzone = 1;
-        if (pInput.Player.turretTurn.ReadValue<float>() < 0.15f && pInput.Player.turretTurn.ReadValue<float>() > -0.15f)
-            deadzone = 0;
-        tRotation = new Vector3(0, pInput.Player.turretTurn.ReadValue<float>() * turnSpeed * Time.deltaTime * deadzone + tRotation.y, 0);
+        tRotation = new Vector3(0, pInput.Player.turretTurn.ReadValue<float>() * turnSpeed * Time.deltaTime + tRotation.y, 0);
         turret.localRotation = Quaternion.Euler(tRotation);
     }
 }
