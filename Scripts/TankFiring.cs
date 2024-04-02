@@ -46,12 +46,10 @@ public class TankFiring : MonoBehaviour
         bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
         //StartCoroutine(nameof(Firing));
     }
-    private void Update()
-    {
-        bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
-    }
+    
     void FixedUpdate()
     {
+        bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
         if (bActive)
         {
             if (bTimer)
