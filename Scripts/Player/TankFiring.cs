@@ -22,7 +22,6 @@ public class TankFiring : MonoBehaviour
     private float timer = 0f;
 
     private bool bActive;
-    private bool bTimer;
     private PlayerInput pInput;
 
 
@@ -47,24 +46,16 @@ public class TankFiring : MonoBehaviour
         //StartCoroutine(nameof(Firing));
     }
     
-    void FixedUpdate()
+    void Update()
     {
         bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
         if (bActive)
         {
-            if (bTimer)
-            {
-                timer += Time.fixedDeltaTime;
-                if (timer >= firrate)
-                {
-                    bTimer = false;
-                    timer = 0;
-                }
-            }
-            else
+            timer += Time.deltaTime;
+            if (timer >= firrate)
             {
                 Fire();
-                bTimer = true;
+                timer = 0;
             }
         }
     }
@@ -83,12 +74,5 @@ public class TankFiring : MonoBehaviour
                 break;
             }
         }
-
-
-                /*bullet = Instantiate(bulletPrefab,spawnPoint).GetComponent<Bullet>();
-                bullet.transform.localPosition = Vector3.zero; 
-                bullet.transform.parent = null;
-                bullet.Activate(speed, transform.forward);*/
-
     }
 }
