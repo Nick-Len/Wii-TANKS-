@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour
+public class AiHealth : MonoBehaviour
 {
     [SerializeField]
     private int hp;
@@ -16,6 +16,8 @@ public class HealthSystem : MonoBehaviour
     private List<Collider> colliders;
     [SerializeField]
     private bool resucitate;
+    [SerializeField]
+    private AiTurret tur;
 
     private void Start()
     {
@@ -27,7 +29,7 @@ public class HealthSystem : MonoBehaviour
         hp = Mathf.Clamp(hp, 0, maxHealth);
 
         hUI.UpdateUI(hp / (float)maxHealth);
-        if(hp == 0)
+        if (hp == 0)
         {
             OnDeath();
         }
@@ -43,14 +45,15 @@ public class HealthSystem : MonoBehaviour
     }
     private void OnDeath()
     {
-        foreach(Renderer r in renderers)
+        foreach (Renderer r in renderers)
         {
             r.enabled = false;
         }
-        foreach(Collider c in colliders)
+        foreach (Collider c in colliders)
         {
             c.enabled = false;
         }
+        tur.OnDeath();
     }
 
     public void ResetHealth()
@@ -64,5 +67,6 @@ public class HealthSystem : MonoBehaviour
             c.enabled = true;
         }
         hp = maxHealth;
+        tur.Reset();
     }
 }

@@ -11,9 +11,9 @@ public class TankFiring : MonoBehaviour
     [SerializeField]
     private int bulletCacheCount = 5;
     [SerializeField]
-    private float speed = 10;
+    private float speed = 6;
     [SerializeField]
-    private float firrate = 0.2f;
+    private float firrate = 0.5f;
     [SerializeField]
     private Transform spawnPoint;
     [SerializeField]
@@ -43,15 +43,16 @@ public class TankFiring : MonoBehaviour
         pInput.Enable();
         //bActive = true;
         bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
+        timer = firrate + 1;
         //StartCoroutine(nameof(Firing));
     }
     
     void Update()
     {
         bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
+        timer += Time.deltaTime;
         if (bActive)
         {
-            timer += Time.deltaTime;
             if (timer >= firrate)
             {
                 Fire();
