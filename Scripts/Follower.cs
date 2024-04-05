@@ -22,7 +22,7 @@ public class Follower : MonoBehaviour
         agent.isStopped = false;
         agent.SetDestination(target.position);
         //Debug.Log(agent.remainingDistance);
-        if (agent.remainingDistance <= 7.5f)
+        if (agent.remainingDistance <= 10.4f)
         {
             agent.isStopped = true;
         }

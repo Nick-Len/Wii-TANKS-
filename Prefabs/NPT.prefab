@@ -187,7 +187,7 @@ MonoBehaviour:
   bActive: 0
   bang: {fileID: 8763030404115516394}
   agent: {fileID: 4313224235483908175}
-  firrate: 1
+  firrate: 2.5
 --- !u!82 &831141418928845919
 AudioSource:
   m_ObjectHideFlags: 0
@@ -574,6 +574,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 3151894230274018837, guid: 94faeb2d5da876b44883417ce6706820,
+        type: 3}
+      propertyPath: tur
+      value: 
+      objectReference: {fileID: 3435283920549432898}
     - target: {fileID: 3151894230274018837, guid: 94faeb2d5da876b44883417ce6706820,
         type: 3}
       propertyPath: colliders.Array.size

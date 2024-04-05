@@ -6,8 +6,7 @@ using UnityEngine.Windows;
 
 public class AiTurret : MonoBehaviour
 {
-    [SerializeField]
-    private Transform target;
+    private Vector3 target;
     [SerializeField]
     private float speed = 75;
     [SerializeField]
@@ -22,6 +21,7 @@ public class AiTurret : MonoBehaviour
     private void Start()
     {
         bActive = true;
+        target = Vector3.zero;
         if (bActive)
         {
             StartCoroutine(nameof(Aiming));
@@ -50,7 +50,7 @@ public class AiTurret : MonoBehaviour
 
         while(bActive)
         {
-            direction = (target.position - transform.position).normalized;
+            direction = (target - transform.position).normalized;
             direction.y = 0;
             /*hRotation = new Vector3(Mathf.Clamp(direction.x, transform.rotation.x - (speed * Time.deltaTime), transform.rotation.x + (speed * Time.deltaTime)),
                 0,
@@ -62,6 +62,21 @@ public class AiTurret : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    private void OnEnable()
+    {
+        FollowDelegate.follow += Locate;
+    }
+
+    private void OnDisable()
+    {
+        FollowDelegate.follow -= Locate;
+    }
+
+    private void Locate(Transform pTransform)
+    {
+        target = pTransform.position;
     }
 
     IEnumerator Firing()

@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aSource: {fileID: 5855179288140426529}
   bulletCacheCount: 5
-  speed: 6
+  speed: 7
   firrate: 0.5
   spawnPoint: {fileID: 5381227046385492843}
   bulletPrefab: {fileID: 1719282555294203540, guid: eaa39bb49d7905b43bf7a8eff52a34c8,
