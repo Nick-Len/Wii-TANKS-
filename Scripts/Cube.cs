@@ -17,14 +17,6 @@ public class Cube : MonoBehaviour
         origRigidBody = GetComponent<Rigidbody>();
     }
 
-    private void OnEnable()
-    {
-        ResetScene.ResetWorld += Reset;
-    }
-    private void OnDisable()
-    {
-        ResetScene.ResetWorld -= Reset;
-    }
 
     private void Reset()
     {
