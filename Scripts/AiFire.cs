@@ -46,4 +46,13 @@ public class AiFire : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        foreach (Bullet b in bullets)
+        {
+            if(b != null)
+                Destroy(b.gameObject);
+        }
+    }
 }
