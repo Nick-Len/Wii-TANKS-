@@ -18,6 +18,8 @@ public class Bullet : MonoBehaviour
     private int damage;
     [SerializeField]
     private AudioSource aSource;
+    [SerializeField]
+    private AudioSource wSource;
     private float speed = 5;
     private Vector3 direction = Vector3.zero;
     private bool bActive;
@@ -89,6 +91,7 @@ public class Bullet : MonoBehaviour
             }
             direction = Quaternion.AngleAxis(bAngle, Vector3.up) * transform.forward;
             transform.rotation = Quaternion.LookRotation(direction);
+            wSource.Play();
             bounces--;
         }
     }

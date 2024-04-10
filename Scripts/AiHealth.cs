@@ -18,6 +18,8 @@ public class AiHealth : MonoBehaviour
     private bool resucitate;
     [SerializeField]
     private AiTurret tur;
+    [SerializeField]
+    private AudioSource aSource;
 
     private void Start()
     {
@@ -45,6 +47,7 @@ public class AiHealth : MonoBehaviour
     }
     private void OnDeath()
     {
+        aSource.Play();
         foreach (Renderer r in renderers)
         {
             r.enabled = false;

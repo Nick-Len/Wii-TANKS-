@@ -16,6 +16,12 @@ public class HealthSystem : MonoBehaviour
     private List<Collider> colliders;
     [SerializeField]
     private bool resucitate;
+    [SerializeField]
+    private AudioSource aSource;
+    [SerializeField]
+    private PlayerMovement pMovement;
+    [SerializeField]
+    private TankFiring firing;
 
     private void Start()
     {
@@ -43,7 +49,10 @@ public class HealthSystem : MonoBehaviour
     }
     private void OnDeath()
     {
-        foreach(Renderer r in renderers)
+        aSource.Play();
+        pMovement.alive = false;
+        firing.alive = false;
+        foreach (Renderer r in renderers)
         {
             r.enabled = false;
         }

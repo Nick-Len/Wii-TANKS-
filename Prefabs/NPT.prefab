@@ -197,7 +197,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 665d07de4d70b0d4cb299d31ae8a36cf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c136100ecc4eae44f90c9ae3711bed4f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.35
   m_Pitch: 1
@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 3361008294003351684}
   - component: {fileID: 4313224235483908175}
   - component: {fileID: 6090140837196736833}
+  - component: {fileID: -8428467839694989098}
   m_Layer: 0
   m_Name: NPT
   m_TagString: Untagged
@@ -368,7 +369,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5724875290761934917}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 1
   m_Speed: 2
   m_Acceleration: 1
   avoidancePriority: 50
@@ -394,6 +395,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 4313224235483908175}
+--- !u!114 &-8428467839694989098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724875290761934917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7963178402220004514
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +593,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 2681775378467159277, guid: 94faeb2d5da876b44883417ce6706820,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3151894230274018837, guid: 94faeb2d5da876b44883417ce6706820,
         type: 3}
       propertyPath: tur
@@ -607,6 +632,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605695404497219851, guid: 94faeb2d5da876b44883417ce6706820,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

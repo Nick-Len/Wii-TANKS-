@@ -22,6 +22,7 @@ public class TankFiring : MonoBehaviour
     private float timer = 0f;
 
     private bool bActive;
+    public bool alive;
     private PlayerInput pInput;
 
 
@@ -46,9 +47,16 @@ public class TankFiring : MonoBehaviour
         timer = firrate + 1;
         //StartCoroutine(nameof(Firing));
     }
-    
+
+    private void OnEnable()
+    {
+        alive = true;
+    }
+
     void Update()
     {
+        if(!alive)
+            pInput.Disable();
         bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
         timer += Time.deltaTime;
         if (bActive)

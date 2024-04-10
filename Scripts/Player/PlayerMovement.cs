@@ -16,16 +16,19 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 hRotation;
     private Vector3 tRotation;
     private int invert;
+    public bool alive;
 
-
-    void Start()
+    void OnEnable()
     {
         pInput = new PlayerInput();
         pInput.Enable();
+        alive = true;
     }
 
     void Update()
     {
+        if(!alive)
+            pInput.Disable();
         invert = 1;
         direction = transform.forward * pInput.Player.Movement.ReadValue<float>();
         transform.localPosition += direction * speed * Time.deltaTime;
