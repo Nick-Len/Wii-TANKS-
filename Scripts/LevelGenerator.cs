@@ -16,6 +16,11 @@ public class LevelGenerator : MonoBehaviour
     private bool bReset = false;
     [SerializeField]
     private int level = 1;
+    private int bTanks;
+    private int gTanks;
+    private int yTanks;
+    private int grTanks;
+    private int pTanks;
 
     public void Start()
     {
@@ -26,6 +31,15 @@ public class LevelGenerator : MonoBehaviour
         }
         worldReset();
         Invoke("worldReset", 0.1f);
+    }
+    private void OnEnable()
+    {
+        AiHealth.compdeath += aiTracker;
+    }
+
+    private void OnDisable()
+    {
+        AiHealth.compdeath -= aiTracker;
     }
 
     private void Update()
@@ -42,5 +56,18 @@ public class LevelGenerator : MonoBehaviour
         obstacles.Clear();
         obstacles.Add(Instantiate(obstacle[level-1]).GetComponent<Transform>());
         surface.BuildNavMesh();
+        bTanks = obstacle[level - 1].GetComponent<TankTracker>().btank;
+        gTanks = obstacle[level - 1].GetComponent<TankTracker>().gtank;
+        yTanks = obstacle[level - 1].GetComponent<TankTracker>().ytank;
+        pTanks = obstacle[level - 1].GetComponent<TankTracker>().ptank;
+        grTanks = obstacle[level - 1].GetComponent<TankTracker>().Gtank;
+    }
+
+    private void aiTracker(int color)
+    {
+        if(color == 0)
+        {
+            bTanks--;
+        }
     }
 }

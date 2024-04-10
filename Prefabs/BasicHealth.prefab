@@ -127,6 +127,7 @@ MonoBehaviour:
   resucitate: 0
   tur: {fileID: 0}
   aSource: {fileID: 6919671234050754959}
+  color: 1
 --- !u!114 &7732468307248823879
 MonoBehaviour:
   m_ObjectHideFlags: 0

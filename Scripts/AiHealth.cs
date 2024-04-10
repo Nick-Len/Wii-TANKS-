@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,9 @@ public class AiHealth : MonoBehaviour
     private AiTurret tur;
     [SerializeField]
     private AudioSource aSource;
+    public static Action<int> compdeath = delegate { };
+    [SerializeField]
+    private int color;
 
     private void Start()
     {
@@ -56,6 +60,7 @@ public class AiHealth : MonoBehaviour
         {
             c.enabled = false;
         }
+        compdeath(color);
         tur.OnDeath();
     }
 

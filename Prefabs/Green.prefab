@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 6090140837196736833}
   - component: {fileID: -8428467839694989098}
   m_Layer: 0
-  m_Name: NPT
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,6 +603,11 @@ PrefabInstance:
       propertyPath: tur
       value: 
       objectReference: {fileID: 3435283920549432898}
+    - target: {fileID: 3151894230274018837, guid: 94faeb2d5da876b44883417ce6706820,
+        type: 3}
+      propertyPath: color
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3151894230274018837, guid: 94faeb2d5da876b44883417ce6706820,
         type: 3}
       propertyPath: colliders.Array.size
