@@ -878,6 +878,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7322788442947260908}
     m_Modifications:
+    - target: {fileID: -8428467839694989098, guid: 648c006e0a6fde24fa84d930c0d385bb,
+        type: 3}
+      propertyPath: m_OverrideArea
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8428467839694989098, guid: 648c006e0a6fde24fa84d930c0d385bb,
+        type: 3}
+      propertyPath: m_IgnoreFromBuild
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3400925017662446098, guid: 648c006e0a6fde24fa84d930c0d385bb,
         type: 3}
       propertyPath: m_LocalPosition.x

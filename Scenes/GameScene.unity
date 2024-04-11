@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 66905287}
   - component: {fileID: 66905286}
   - component: {fileID: 66905290}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,8 +656,8 @@ MonoBehaviour:
   - {fileID: 6787461633760290495, guid: 9dc6cb4e0f85bfd46ab0e331022467f6, type: 3}
   obstacles: []
   surface: {fileID: 2126581504}
-  bReset: 0
-  level: 1
+  bReset: 1
+  level: 3
 --- !u!4 &1324441281
 Transform:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 1515679496}
   - component: {fileID: 1515679495}
   - component: {fileID: 1515679494}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 479428c6bf103c54c98bc8446b2d965d, type: 2}
   m_BuildHeightMesh: 0

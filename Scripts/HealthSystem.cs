@@ -72,6 +72,8 @@ public class HealthSystem : MonoBehaviour
         {
             c.enabled = true;
         }
+        pMovement.alive = true;
+        firing.alive = true;
         hp = maxHealth;
     }
 }
