@@ -7,9 +7,28 @@ public class HealthUI : MonoBehaviour
 {
     [SerializeField]
     private Image healthImage;
+    [SerializeField]
+    private int health = 3;
+    [SerializeField]
+    private LevelGenerator lGen;
 
-    public void UpdateUI(float ratio)
+    private void OnEnable()
     {
-        healthImage.fillAmount = ratio;
+        HealthSystem.Die += UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        HealthSystem.Die -= UpdateUI;
+    }
+
+    public void UpdateUI()
+    {
+        health--;
+        healthImage.fillAmount = Mathf.Clamp(health / 3f, 0, 1);
+        if (health > 0)
+            lGen.playerDeath();
+        else
+            lGen.gameOver();
     }
 }

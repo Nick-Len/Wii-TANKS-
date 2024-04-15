@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,7 @@ public class HealthSystem : MonoBehaviour
 {
     [SerializeField]
     private int hp;
-    [SerializeField]
-    private int maxHealth = 3;
-    [SerializeField]
-    private HealthUI hUI;
+    private int maxHealth = 1;
     [SerializeField]
     private List<Renderer> renderers;
     [SerializeField]
@@ -22,6 +20,7 @@ public class HealthSystem : MonoBehaviour
     private PlayerMovement pMovement;
     [SerializeField]
     private TankFiring firing;
+    public static Action Die = delegate { };
 
     private void Start()
     {
@@ -29,14 +28,8 @@ public class HealthSystem : MonoBehaviour
     }
     public void UpdateHealth(int value)
     {
-        hp -= value;
-        hp = Mathf.Clamp(hp, 0, maxHealth);
-
-        hUI.UpdateUI(hp / (float)maxHealth);
-        if(hp == 0)
-        {
-            OnDeath();
-        }
+        Die();
+        OnDeath();
     }
 
     private void Update()
@@ -50,30 +43,27 @@ public class HealthSystem : MonoBehaviour
     private void OnDeath()
     {
         aSource.Play();
-        pMovement.alive = false;
-        firing.alive = false;
-        foreach (Renderer r in renderers)
+        /*foreach (Renderer r in renderers)
         {
             r.enabled = false;
         }
         foreach(Collider c in colliders)
         {
             c.enabled = false;
-        }
+        }*/
     }
 
     public void ResetHealth()
     {
-        foreach (Renderer r in renderers)
+        hp = maxHealth;
+        /*foreach (Renderer r in renderers)
         {
             r.enabled = true;
         }
         foreach (Collider c in colliders)
         {
             c.enabled = true;
-        }
-        pMovement.alive = true;
-        firing.alive = true;
-        hp = maxHealth;
+        }*/
+        
     }
 }

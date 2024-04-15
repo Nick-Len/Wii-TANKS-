@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9187147984396015965}
   - component: {fileID: 1270682548674234142}
   - component: {fileID: 3858744210868084919}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 3435283920549432898}
   - component: {fileID: 831141418928845919}
   - component: {fileID: 8763030404115516394}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   bActive: 0
   bang: {fileID: 8763030404115516394}
   agent: {fileID: 4313224235483908175}
-  firrate: 2.5
+  firrate: 1.5
 --- !u!82 &831141418928845919
 AudioSource:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c136100ecc4eae44f90c9ae3711bed4f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 408ba50395d46c94aa6d2685c8bc9a9f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.35
   m_Pitch: 1
@@ -297,9 +297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aSource: {fileID: 831141418928845919}
   bulletCacheCount: 5
-  speed: 7
+  speed: 14
   spawnPoint: {fileID: 1993455157378951383}
-  bulletPrefab: {fileID: 1719282555294203540, guid: eaa39bb49d7905b43bf7a8eff52a34c8,
+  bulletPrefab: {fileID: 1719282555294203540, guid: 356b50fd0e794ef4eb0e5a8d66bea48d,
     type: 3}
 --- !u!1 &5724875290761934917
 GameObject:
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 3361008294003351684}
   - component: {fileID: 4313224235483908175}
   - component: {fileID: 6090140837196736833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 2
+  m_Speed: 0
   m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 75
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1993455157378951383}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,8 +623,13 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 7732468307248823879, guid: 94faeb2d5da876b44883417ce6706820, type: 3}
+    - {fileID: 2505847673650568572, guid: 94faeb2d5da876b44883417ce6706820, type: 3}
+    - {fileID: 6111332589454324712, guid: 94faeb2d5da876b44883417ce6706820, type: 3}
+    - {fileID: 3156318928853362135, guid: 94faeb2d5da876b44883417ce6706820, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 7605695404497219851, guid: 94faeb2d5da876b44883417ce6706820, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94faeb2d5da876b44883417ce6706820, type: 3}

@@ -120,7 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   maxHealth: 3
-  hUI: {fileID: 7732468307248823879}
   renderers: []
   colliders:
   - {fileID: 3854305075048760549}
@@ -141,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 2519662962857091904}
+  health: 3
+  lGen: {fileID: 0}
 --- !u!65 &3854305075048760549
 BoxCollider:
   m_ObjectHideFlags: 0

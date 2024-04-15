@@ -96,7 +96,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void DisableSelf()
+    public void DisableSelf()
     {
         mRenderer.enabled = false;
         cCollider.enabled = false;

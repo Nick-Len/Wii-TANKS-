@@ -47,6 +47,14 @@ public class AiFire : MonoBehaviour
         }
     }
 
+    public void disableBullets()
+    {
+        foreach (Bullet b in bullets)
+        {
+            b.gameObject.SetActive(false);
+        }
+    }
+
     private void OnDestroy()
     {
         foreach (Bullet b in bullets)

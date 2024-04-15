@@ -85,6 +85,14 @@ public class TankFiring : MonoBehaviour
         }
     }
 
+    public void disableBullets()
+    {
+        foreach (Bullet b in bullets)
+        {
+            b.DisableSelf();
+        }
+    }
+
     private void OnDestroy()
     {
         foreach (Bullet b in bullets)
@@ -92,5 +100,10 @@ public class TankFiring : MonoBehaviour
             if (b != null)
                 Destroy(b.gameObject);
         }
+    }
+    public void Enable()
+    {
+        alive = true;
+        pInput.Enable();
     }
 }

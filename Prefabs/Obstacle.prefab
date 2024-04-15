@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4463359161367400781}
   - component: {fileID: 9122452004254623665}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Physical
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 4577749555812846304}
   - component: {fileID: 4804418216613398923}
   - component: {fileID: 5034030011491585934}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564720934342229649}
   - component: {fileID: 6872409587442348225}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Obstacle
   m_TagString: Wall
   m_Icon: {fileID: 0}

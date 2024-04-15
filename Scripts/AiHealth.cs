@@ -8,9 +8,7 @@ public class AiHealth : MonoBehaviour
     [SerializeField]
     private int hp;
     [SerializeField]
-    private int maxHealth = 3;
-    [SerializeField]
-    private HealthUI hUI;
+    private int maxHealth = 1;
     [SerializeField]
     private List<Renderer> renderers;
     [SerializeField]
@@ -31,14 +29,9 @@ public class AiHealth : MonoBehaviour
     }
     public void UpdateHealth(int value)
     {
-        hp -= value;
-        hp = Mathf.Clamp(hp, 0, maxHealth);
-
-        hUI.UpdateUI(hp / (float)maxHealth);
-        if (hp == 0)
-        {
-            OnDeath();
-        }
+        
+        OnDeath();
+        
     }
 
     private void Update()
@@ -60,8 +53,8 @@ public class AiHealth : MonoBehaviour
         {
             c.enabled = false;
         }
-        compdeath(color);
         tur.OnDeath();
+        compdeath(color);
     }
 
     public void ResetHealth()
