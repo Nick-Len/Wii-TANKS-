@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aSource: {fileID: 831141418928845919}
-  bulletCacheCount: 5
+  bulletCacheCount: 3
   speed: 7
   spawnPoint: {fileID: 1993455157378951383}
   bulletPrefab: {fileID: 1719282555294203540, guid: eaa39bb49d7905b43bf7a8eff52a34c8,
