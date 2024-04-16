@@ -7,8 +7,7 @@ public class HealthUI : MonoBehaviour
 {
     [SerializeField]
     private Image healthImage;
-    [SerializeField]
-    private int health = 3;
+    public int health = 3;
     [SerializeField]
     private LevelGenerator lGen;
 

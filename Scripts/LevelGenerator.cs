@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private NavMeshSurface surface;
     [SerializeField]
-    private bool bReset = false;
+    private HealthUI hUI;
+    [SerializeField]
+    private Image healthImage;
     [SerializeField]
     private int level = 1;
     private int bTanks;
@@ -37,32 +40,30 @@ public class LevelGenerator : MonoBehaviour
     private void OnEnable()
     {
         AiHealth.compdeath += aiTracker;
+        RestartGame.Restarted += worldReset;
     }
 
     private void OnDisable()
     {
         AiHealth.compdeath -= aiTracker;
+        RestartGame.Restarted -= worldReset;
     }
 
-    private void Update()
-    {
-        if (bReset)
-        {
-            bReset = false;
-            worldReset();
-        }
-    }
     public void worldReset()
     {
         Destroy(obstacles[0].gameObject);
         obstacles.Clear();
-        obstacles.Add(Instantiate(obstacle[level-1]).GetComponent<Transform>());
+        obstacles.Add(Instantiate(obstacle[0]).GetComponent<Transform>());
         surface.BuildNavMesh();
-        bTanks = obstacle[level - 1].GetComponent<TankTracker>().btank;
-        gTanks = obstacle[level - 1].GetComponent<TankTracker>().gtank;
-        yTanks = obstacle[level - 1].GetComponent<TankTracker>().ytank;
-        pTanks = obstacle[level - 1].GetComponent<TankTracker>().ptank;
-        grTanks = obstacle[level - 1].GetComponent<TankTracker>().Gtank;
+        bTanks = obstacle[0].GetComponent<TankTracker>().btank;
+        gTanks = obstacle[0].GetComponent<TankTracker>().gtank;
+        yTanks = obstacle[0].GetComponent<TankTracker>().ytank;
+        pTanks = obstacle[0].GetComponent<TankTracker>().ptank;
+        grTanks = obstacle[0].GetComponent<TankTracker>().Gtank;
+        level = 1;
+        hUI.health = 3;
+        healthImage.fillAmount = 1;
+        newRound();
     }
 
     private void levelProgress()

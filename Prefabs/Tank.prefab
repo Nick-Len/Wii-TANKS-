@@ -315,6 +315,7 @@ MonoBehaviour:
   aSource: {fileID: 621513357324021332}
   wSource: {fileID: 4291453564824293610}
   tracks: {fileID: 1121285271160471931, guid: 855ce5eebd7b9ad4ea41c82b20c2dd91, type: 3}
+  Scheme: 1
   alive: 0
 --- !u!54 &924156674747209938
 Rigidbody:
