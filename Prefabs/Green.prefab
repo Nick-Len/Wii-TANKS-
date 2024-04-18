@@ -296,11 +296,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aSource: {fileID: 831141418928845919}
-  bulletCacheCount: 5
+  bulletCacheCount: 2
   speed: 14
   spawnPoint: {fileID: 1993455157378951383}
   bulletPrefab: {fileID: 1719282555294203540, guid: 356b50fd0e794ef4eb0e5a8d66bea48d,
     type: 3}
+  bounces: 2
 --- !u!1 &5724875290761934917
 GameObject:
   m_ObjectHideFlags: 0

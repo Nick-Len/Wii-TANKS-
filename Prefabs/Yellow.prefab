@@ -186,7 +186,7 @@ MonoBehaviour:
   bActive: 0
   bang: {fileID: 8763030404115516394}
   agent: {fileID: 4313224235483908175}
-  firrate: 1.5
+  firrate: 2
 --- !u!82 &831141418928845919
 AudioSource:
   m_ObjectHideFlags: 0
@@ -296,11 +296,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aSource: {fileID: 831141418928845919}
-  bulletCacheCount: 3
+  bulletCacheCount: 1
   speed: 7
   spawnPoint: {fileID: 1993455157378951383}
   bulletPrefab: {fileID: 1719282555294203540, guid: eaa39bb49d7905b43bf7a8eff52a34c8,
     type: 3}
+  bounces: 1
 --- !u!1 &5724875290761934917
 GameObject:
   m_ObjectHideFlags: 0
