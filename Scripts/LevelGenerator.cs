@@ -51,7 +51,7 @@ public class LevelGenerator : MonoBehaviour
 
     public void worldReset()
     {
-        Destroy(obstacles[0].gameObject);
+        /*Destroy(obstacles[0].gameObject);
         obstacles.Clear();
         obstacles.Add(Instantiate(obstacle[0]).GetComponent<Transform>());
         surface.BuildNavMesh();
@@ -62,8 +62,13 @@ public class LevelGenerator : MonoBehaviour
         grTanks = obstacle[0].GetComponent<TankTracker>().Gtank;
         level = 1;
         hUI.health = 3;
+        hUI.score = 0;
+        hUI.UpdateScore(-1);
         healthImage.fillAmount = 1;
         newRound();
+        surface.BuildNavMesh();*/
+        level = 1;
+        levelProgress();
     }
 
     private void levelProgress()
@@ -109,6 +114,7 @@ public class LevelGenerator : MonoBehaviour
             newRound();
 }
     }
+
 
     public void playerDeath()
     {
