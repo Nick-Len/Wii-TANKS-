@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AiHealth : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class AiHealth : MonoBehaviour
     }
     private void OnDeath()
     {
+        GetComponentInParent<NavMeshAgent>().enabled = false;
         aSource.Play();
         foreach (Renderer r in renderers)
         {
