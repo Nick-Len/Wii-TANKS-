@@ -1444,6 +1444,8 @@ MonoBehaviour:
   healthImage: {fileID: 2127097444}
   health: 3
   lGen: {fileID: 1324441279}
+  score: 0
+  counterText: {fileID: 684669102}
 --- !u!114 &2127097444
 MonoBehaviour:
   m_ObjectHideFlags: 0
