@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -982,7 +982,6 @@ MonoBehaviour:
   - {fileID: 48295996223482519, guid: fc1645c2dbd81664f9f3941e8cb79417, type: 3}
   - {fileID: 6787461633760290495, guid: 9dc6cb4e0f85bfd46ab0e331022467f6, type: 3}
   obstacles: []
-  surface: {fileID: 2126581504}
   hUI: {fileID: 2127097443}
   healthImage: {fileID: 2127097444}
   level: 1
@@ -1387,7 +1386,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 479428c6bf103c54c98bc8446b2d965d, type: 2}
   m_BuildHeightMesh: 0

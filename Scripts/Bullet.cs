@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
             transform.position += direction * Time.fixedDeltaTime * speed;
         }
     }
-    public void Activate(float spd, Vector3 dir)
+    public void Activate(float spd, Vector3 dir, int bou)
     {
         bActive = true;
         mRenderer.enabled = true;
@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(dir);
         direction = dir;
         speed = spd;
-        bounces = 1;
+        bounces = bou;
         //shotCounter(-1);
     }
 

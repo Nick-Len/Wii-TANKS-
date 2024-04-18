@@ -30,16 +30,16 @@ public class TankFiring : MonoBehaviour
     private void Start()
     {
         //instantiate all bullets
-        for(int i = 0; i < bulletCacheCount; i++)
+        for (int i = 0; i < bulletCacheCount; i++)
         {
             bullets.Add(Instantiate(bulletPrefab).GetComponent<Bullet>());
         }
 
-        foreach(Bullet bullet in bullets)
+        foreach (Bullet bullet in bullets)
         {
             bullet.gameObject.SetActive(false);
         }
-        
+
         pInput = new PlayerInput();
         pInput.Enable();
         //bActive = true;
@@ -55,7 +55,7 @@ public class TankFiring : MonoBehaviour
 
     void Update()
     {
-        if(!alive)
+        if (!alive)
             pInput.Disable();
         bActive = (pInput.Player.Shoot.ReadValue<float>() != 0);
         timer += Time.deltaTime;
@@ -77,7 +77,7 @@ public class TankFiring : MonoBehaviour
             {
                 b.gameObject.SetActive(true);
                 b.transform.position = spawnPoint.position;
-                b.Activate(speed, transform.forward);
+                b.Activate(speed, transform.forward, 1);
                 aSource.Play();
                 bActive = false;
                 break;

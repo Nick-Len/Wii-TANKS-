@@ -14,8 +14,6 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private List<Transform> obstacles = new List<Transform>();
     [SerializeField]
-    private NavMeshSurface surface;
-    [SerializeField]
     private HealthUI hUI;
     [SerializeField]
     private Image healthImage;
@@ -29,7 +27,7 @@ public class LevelGenerator : MonoBehaviour
 
     public void Start()
     {
-        obstacles.Add(Instantiate(obstacle[level-1]).GetComponent<Transform>());
+        obstacles.Add(Instantiate(obstacle[level - 1]).GetComponent<Transform>());
         foreach (Transform t in obstacles)
         {
             t.gameObject.SetActive(false);
@@ -51,10 +49,10 @@ public class LevelGenerator : MonoBehaviour
 
     public void worldReset()
     {
-        /*Destroy(obstacles[0].gameObject);
+        Destroy(obstacles[0].gameObject);
         obstacles.Clear();
         obstacles.Add(Instantiate(obstacle[0]).GetComponent<Transform>());
-        surface.BuildNavMesh();
+        Invoke("timer", 10f);
         bTanks = obstacle[0].GetComponent<TankTracker>().btank;
         gTanks = obstacle[0].GetComponent<TankTracker>().gtank;
         yTanks = obstacle[0].GetComponent<TankTracker>().ytank;
@@ -66,9 +64,6 @@ public class LevelGenerator : MonoBehaviour
         hUI.UpdateScore(-1);
         healthImage.fillAmount = 1;
         newRound();
-        surface.BuildNavMesh();*/
-        level = 1;
-        levelProgress();
     }
 
     private void levelProgress()
@@ -76,7 +71,6 @@ public class LevelGenerator : MonoBehaviour
         Destroy(obstacles[0].gameObject);
         obstacles.Clear();
         obstacles.Add(Instantiate(obstacle[level - 1]).GetComponent<Transform>());
-        surface.BuildNavMesh();
         bTanks = obstacle[level - 1].GetComponent<TankTracker>().btank;
         gTanks = obstacle[level - 1].GetComponent<TankTracker>().gtank;
         yTanks = obstacle[level - 1].GetComponent<TankTracker>().ytank;
@@ -87,7 +81,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void aiTracker(int color)
     {
-        if(color == 0)
+        if (color == 0)
         {
             bTanks--;
         }
@@ -107,12 +101,17 @@ public class LevelGenerator : MonoBehaviour
         {
             yTanks--;
         }
-        if(bTanks == 0 && gTanks == 0 && yTanks == 0 && grTanks == 0 && pTanks == 0)
+        if (bTanks == 0 && gTanks == 0 && yTanks == 0 && grTanks == 0 && pTanks == 0)
         {
             level++;
             levelProgress();
             newRound();
-}
+        }
+    }
+
+    private void timer()
+    {
+        return;
     }
 
 

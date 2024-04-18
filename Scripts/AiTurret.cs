@@ -48,7 +48,7 @@ public class AiTurret : MonoBehaviour
         Vector3 direction;
         Quaternion hRotation;
 
-        while(bActive)
+        while (bActive)
         {
             direction = (target - transform.position).normalized;
             direction.y = 0;

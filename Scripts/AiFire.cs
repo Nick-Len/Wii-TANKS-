@@ -16,6 +16,8 @@ public class AiFire : MonoBehaviour
     private Transform spawnPoint;
     [SerializeField]
     private GameObject bulletPrefab;
+    [SerializeField]
+    private int bounces = 1;
     private List<Bullet> bullets = new List<Bullet>();
 
 
@@ -40,7 +42,7 @@ public class AiFire : MonoBehaviour
             {
                 b.gameObject.SetActive(true);
                 b.transform.position = spawnPoint.position;
-                b.Activate(speed, transform.forward);
+                b.Activate(speed, transform.forward, bounces);
                 aSource.Play();
                 break;
             }
@@ -59,7 +61,7 @@ public class AiFire : MonoBehaviour
     {
         foreach (Bullet b in bullets)
         {
-            if(b != null)
+            if (b != null)
                 Destroy(b.gameObject);
         }
     }

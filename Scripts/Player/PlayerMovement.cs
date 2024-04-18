@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(Scheme)
+        if (Scheme)
         {
             invert = 1;
             direction = transform.forward * pInput.Player.Movement.ReadValue<float>();
@@ -54,7 +54,11 @@ public class PlayerMovement : MonoBehaviour
             turret.localRotation = Quaternion.Euler(tRotation);
             if (pInput.Player.Movement.ReadValue<float>() != 0f)
             {
-                dist += speed * Time.deltaTime;
+
+                if (pInput.Player.Movement.ReadValue<float>() < 0f)
+                    dist += speed * Time.deltaTime * -1 * pInput.Player.Movement.ReadValue<float>();
+                else
+                    dist += speed * Time.deltaTime * pInput.Player.Movement.ReadValue<float>();
                 if (dist > dTime)
                 {
                     trackL.Add(Instantiate(tracks).GetComponent<Transform>());

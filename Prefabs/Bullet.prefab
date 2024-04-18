@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7158303411384267930}
   - component: {fileID: 8596590076717673885}
   - component: {fileID: -712547359497680906}
+  - component: {fileID: -9004206339870927011}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
@@ -369,3 +370,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!208 &-9004206339870927011
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719282555294203540}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.12, y: 0.12900001, z: 0.23300001}
+  m_MoveThreshold: 0.03
+  m_Carve: 0
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: -0.014, z: 0.23300001}
+  m_TimeToStationary: 0.5
