@@ -980,7 +980,9 @@ MonoBehaviour:
   obstacle:
   - {fileID: 7322788442947260908, guid: 99a74aa2cc3dde14c93c6bbe7a8cee58, type: 3}
   - {fileID: 48295996223482519, guid: fc1645c2dbd81664f9f3941e8cb79417, type: 3}
+  - {fileID: 4634690645313819436, guid: 88dfb66de8e8f634dab8ccbea4ed5c32, type: 3}
   - {fileID: 6787461633760290495, guid: 9dc6cb4e0f85bfd46ab0e331022467f6, type: 3}
+  - {fileID: 986092632652266466, guid: 60016200bc9808b4a97f031e4993c1ef, type: 3}
   obstacles: []
   hUI: {fileID: 2127097443}
   healthImage: {fileID: 2127097444}

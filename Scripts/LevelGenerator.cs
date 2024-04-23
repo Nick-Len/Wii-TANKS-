@@ -20,9 +20,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private int level = 1;
     private int bTanks;
-    private int gTanks;
+    private int greyTanks;
     private int yTanks;
-    private int grTanks;
+    private int greenTanks;
     private int pTanks;
 
     public void Start()
@@ -54,10 +54,10 @@ public class LevelGenerator : MonoBehaviour
         obstacles.Add(Instantiate(obstacle[0]).GetComponent<Transform>());
         Invoke("timer", 10f);
         bTanks = obstacle[0].GetComponent<TankTracker>().btank;
-        gTanks = obstacle[0].GetComponent<TankTracker>().gtank;
+        greyTanks = obstacle[0].GetComponent<TankTracker>().greytank;
         yTanks = obstacle[0].GetComponent<TankTracker>().ytank;
         pTanks = obstacle[0].GetComponent<TankTracker>().ptank;
-        grTanks = obstacle[0].GetComponent<TankTracker>().Gtank;
+        greenTanks = obstacle[0].GetComponent<TankTracker>().greentank;
         level = 1;
         hUI.health = 3;
         hUI.score = 0;
@@ -72,10 +72,10 @@ public class LevelGenerator : MonoBehaviour
         obstacles.Clear();
         obstacles.Add(Instantiate(obstacle[level - 1]).GetComponent<Transform>());
         bTanks = obstacle[level - 1].GetComponent<TankTracker>().btank;
-        gTanks = obstacle[level - 1].GetComponent<TankTracker>().gtank;
+        greyTanks = obstacle[level - 1].GetComponent<TankTracker>().greytank;
         yTanks = obstacle[level - 1].GetComponent<TankTracker>().ytank;
         pTanks = obstacle[level - 1].GetComponent<TankTracker>().ptank;
-        grTanks = obstacle[level - 1].GetComponent<TankTracker>().Gtank;
+        greenTanks = obstacle[level - 1].GetComponent<TankTracker>().greentank;
         newRound();
     }
 
@@ -87,11 +87,11 @@ public class LevelGenerator : MonoBehaviour
         }
         else if (color == 1)
         {
-            gTanks--;
+            greyTanks--;
         }
         else if (color == 2)
         {
-            grTanks--;
+            greenTanks--;
         }
         else if (color == 3)
         {
@@ -101,7 +101,7 @@ public class LevelGenerator : MonoBehaviour
         {
             yTanks--;
         }
-        if (bTanks == 0 && gTanks == 0 && yTanks == 0 && grTanks == 0 && pTanks == 0)
+        if (bTanks == 0 && greyTanks == 0 && yTanks == 0 && greenTanks == 0 && pTanks == 0)
         {
             level++;
             levelProgress();
