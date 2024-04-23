@@ -150,10 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aSource: {fileID: 6550792111655593223}
   btank: 2
-  gtank: 2
+  greytank: 2
   ytank: 0
   ptank: 0
-  Gtank: 0
+  greentank: 0
 --- !u!114 &5209782660041899368
 MonoBehaviour:
   m_ObjectHideFlags: 0

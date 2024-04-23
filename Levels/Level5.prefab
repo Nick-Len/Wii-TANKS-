@@ -103,10 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aSource: {fileID: 5814159982313876333}
   btank: 1
-  gtank: 2
+  greytank: 2
   ytank: 0
   ptank: 2
-  Gtank: 1
+  greentank: 1
 --- !u!82 &5814159982313876333
 AudioSource:
   m_ObjectHideFlags: 0

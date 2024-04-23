@@ -986,7 +986,7 @@ MonoBehaviour:
   obstacles: []
   hUI: {fileID: 2127097443}
   healthImage: {fileID: 2127097444}
-  level: 1
+  level: 3
 --- !u!4 &1324441281
 Transform:
   m_ObjectHideFlags: 0
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
