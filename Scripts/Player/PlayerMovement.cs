@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = 5f;
     [SerializeField]
-    private float turnSpeed = 75f;
+    private float rotatesmooth = 360f;
+    [SerializeField]
+    private float deadzone = 0.1f;
     [SerializeField]
     private Transform turret;
     [SerializeField]
@@ -16,15 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource wSource;
     [SerializeField]
     private GameObject tracks;
-    [SerializeField]
-    private bool Scheme;
     private List<Transform> trackL = new List<Transform>();
 
     private PlayerInput pInput;
-    private Vector3 direction;
-    private Vector3 hRotation;
-    private Vector3 tRotation;
-    private int invert;
+    private Vector3 movement;
+    private Vector3 turrot;
     public bool alive;
     private float dist;
     private int track;
@@ -41,45 +39,44 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Scheme)
+        if (Mathf.Abs(pInput.Player.Movement.ReadValue<Vector2>().x) > deadzone || Mathf.Abs(pInput.Player.Movement.ReadValue<Vector2>().y) > deadzone)
         {
-            invert = 1;
-            direction = transform.forward * pInput.Player.Movement.ReadValue<float>();
-            transform.localPosition += direction * speed * Time.deltaTime;
-            if (pInput.Player.Movement.ReadValue<float>() < 0f)
-                invert = -1;
-            hRotation = new Vector3(0, pInput.Player.Turn.ReadValue<float>() * turnSpeed * Time.deltaTime * invert + hRotation.y, 0);
-            transform.rotation = Quaternion.Euler(hRotation);
-            tRotation = new Vector3(0, pInput.Player.turretTurn.ReadValue<float>() * turnSpeed * Time.deltaTime + tRotation.y, 0);
-            turret.localRotation = Quaternion.Euler(tRotation);
-            if (pInput.Player.Movement.ReadValue<float>() != 0f)
-            {
-
-                if (pInput.Player.Movement.ReadValue<float>() < 0f)
-                    dist += speed * Time.deltaTime * -1 * pInput.Player.Movement.ReadValue<float>();
-                else
-                    dist += speed * Time.deltaTime * pInput.Player.Movement.ReadValue<float>();
-                if (dist > dTime)
-                {
-                    trackL.Add(Instantiate(tracks).GetComponent<Transform>());
-                    trackL[i].rotation = Quaternion.Euler(hRotation.x + 90, hRotation.y, hRotation.z);
-                    trackL[i].position = transform.position;
-                    if (track == 1)
-                        aSource.Play();
-                    else
-                        wSource.Play();
-                    track++;
-                    track = track % 2;
-                    dist = 0;
-                    i++;
-                }
-            }
+            movement = pInput.Player.Movement.ReadValue<Vector2>();
+            float tmp = movement.x;
+            movement.x = movement.y * -1f;
+            movement.z = tmp;
+            movement.y = 0;
+            transform.rotation = Quaternion.LookRotation(movement);
+            transform.position += movement * speed * Time.deltaTime;
         }
-        else
+        if (Mathf.Abs(pInput.Player.Turn.ReadValue<Vector2>().x) > deadzone || Mathf.Abs(pInput.Player.Turn.ReadValue<Vector2>().y) > deadzone)
         {
-            direction = transform.forward * pInput.Player.AltMove.ReadValue<Vector2>();
-            transform.rotation = Quaternion.Euler(direction);
-            transform.position += transform.forward * speed * Time.deltaTime;
+            turrot = pInput.Player.Turn.ReadValue<Vector2>();
+            float tmp = turrot.x;
+            turrot.x = turrot.y * -1f;
+            turrot.z = tmp;
+            turrot.y = 0;
+            turret.rotation = Quaternion.LookRotation(turrot);
+        }
+
+        if (Mathf.Abs(movement.x) > deadzone || Mathf.Abs(movement.z) > deadzone)
+        {
+            dist += speed * Time.deltaTime * Mathf.Sqrt((movement.x * movement.x) + (movement.z * movement.z));
+            if (dist > dTime)
+            {
+                trackL.Add(Instantiate(tracks).GetComponent<Transform>());
+                trackL[i].rotation = Quaternion.LookRotation(transform.forward);
+                trackL[i].localEulerAngles = trackL[i].localEulerAngles + transform.up;
+                trackL[i].position = transform.position;
+                if (track == 1)
+                    aSource.Play();
+                else
+                    wSource.Play();
+                track++;
+                track = track % 2;
+                dist = 0;
+                i++;
+            }
         }
     }
     public void Enable()

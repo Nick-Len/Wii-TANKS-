@@ -29,62 +29,26 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""8aaadd71-bfe0-4e98-8e41-96145387c001"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Turn"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""7d11b651-ac37-4907-b18b-54242605bc57"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Shoot"",
                     ""type"": ""Button"",
                     ""id"": ""9e1f6924-e0b4-4cf3-b735-3986b03dfe5a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""turretTurn"",
-                    ""type"": ""Button"",
-                    ""id"": ""daf5c188-c26e-4233-927c-075c05cc5760"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""AltMove"",
-                    ""type"": ""Value"",
-                    ""id"": ""d2e931fd-8c72-46d5-9e71-33dd431a6199"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""AltTur"",
-                    ""type"": ""Value"",
-                    ""id"": ""30e36dda-1c2a-4f2b-bc39-b563fd77eb14"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""AltFire"",
-                    ""type"": ""Button"",
-                    ""id"": ""30699949-2021-4aac-861a-66ead597e25b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -95,7 +59,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""373e9519-a6ed-4fe3-ad1f-80a5faeb52b5"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -115,9 +79,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""UpDown"",
-                    ""id"": ""9db74b17-6956-46c4-8832-19c60c0977bd"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""wasd"",
+                    ""id"": ""9b30427c-65dc-4d83-86a4-caf4f0429809"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -126,52 +90,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""7ef386e9-4f3d-4d5b-8d7f-fc3610349de6"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""f8b64ae8-5297-4ea3-b03f-24f13174c250"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""WS"",
-                    ""id"": ""163432c3-6887-4887-b473-41cb9b0d4096"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""d0875d87-bd7f-43b3-841f-3ddee4d5bd56"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""bb606cda-d44a-48b9-bbdc-973dc78d445a"",
+                    ""name"": ""up"",
+                    ""id"": ""5d27eb4d-8ea1-42dc-aaca-834e1d8935f0"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -181,257 +101,114 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""LeftRight"",
-                    ""id"": ""8a209b03-fe88-4f7f-afd2-b43976827f61"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""down"",
+                    ""id"": ""f28e0512-1e01-47b7-a95f-db9c2b2c0d73"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Turn"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""82091f01-a244-4612-b3b2-8fd25d7efa52"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Turn"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""ec2765f8-b8b6-41f3-9507-5023930ecb51"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""AD"",
-                    ""id"": ""0a13925b-44c0-4ae7-8fdc-2e1cec296ba3"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Turn"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""e7d9f428-c6db-4011-8f56-01d5a7d5cdca"",
+                    ""name"": ""left"",
+                    ""id"": ""6a7dacd0-a9e9-4322-96c8-07d21d694e46"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Turn"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""251efbae-71ce-4513-a9cc-455a77ad72e5"",
+                    ""name"": ""right"",
+                    ""id"": ""7d1542be-e501-4f01-a71a-7051cba6fe8f"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""LRturret"",
-                    ""id"": ""f0823c79-be42-4947-b30e-caaf3e094d54"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""turretTurn"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""24ea9bb6-8ea8-47d6-8a29-baa46f630a3f"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""turretTurn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""68a67d4d-3623-4480-b5f2-c89179de20d1"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""turretTurn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""QE"",
-                    ""id"": ""bca099dc-779a-4b5a-953c-0f1d0f59466d"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""turretTurn"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""ce25347e-e962-404b-9cb7-681be7abba3c"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""turretTurn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""344fce5e-97c6-4d71-8cfa-3fe1bc13b1dc"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""turretTurn"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9990670c-0b6a-4eae-85f6-8e0ec8a7f39d"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""id"": ""653b5d5b-0dfa-448a-aea8-908ca5207d05"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltFire"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""StickAim"",
-                    ""id"": ""3da8adb2-04e3-4957-9a3c-941ce221ad68"",
+                    ""name"": ""arrows"",
+                    ""id"": ""4beeefac-fd23-48cc-a613-91609b0d62cb"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltTur"",
+                    ""action"": ""Turn"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""cb0ef5e6-f930-47cb-aac9-3661fb18f561"",
-                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""id"": ""dbc97304-a1b0-4379-b45c-b58fc0e2b89f"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltTur"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""c7ff64f7-219d-4810-b0bb-bc509e2f25ce"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""id"": ""ae957b36-bb29-4d09-ad66-946886bd985a"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltTur"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""87c03964-a8a2-479c-ad14-9c29e942a0df"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""id"": ""04f13851-70e0-46fb-a1b6-079dad09eea0"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltTur"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""45ec063f-7e6a-45d0-8412-466cc7a99508"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""id"": ""8801d8a1-02de-4440-b828-1f41fcd6c4d4"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltTur"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""9b7f98d0-9a54-452f-8738-ae3984094d1f"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""2a6f448b-f926-4bcf-a503-be1c052374f0"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AltMove"",
-                    ""isComposite"": true,
+                    ""action"": ""Turn"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""f54be9a8-2ce6-40fd-9162-e2b42e23b711"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AltMove"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""b54aa781-313c-44ce-adf5-1c5780731ede"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AltMove"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""cd0052ce-2e4f-4e94-a19f-ba6a1b6e3b39"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AltMove"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""bd7a1536-9601-491a-98ff-3a53e3de02db"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AltMove"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -443,10 +220,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Turn = m_Player.FindAction("Turn", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
-        m_Player_turretTurn = m_Player.FindAction("turretTurn", throwIfNotFound: true);
-        m_Player_AltMove = m_Player.FindAction("AltMove", throwIfNotFound: true);
-        m_Player_AltTur = m_Player.FindAction("AltTur", throwIfNotFound: true);
-        m_Player_AltFire = m_Player.FindAction("AltFire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -511,10 +284,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Turn;
     private readonly InputAction m_Player_Shoot;
-    private readonly InputAction m_Player_turretTurn;
-    private readonly InputAction m_Player_AltMove;
-    private readonly InputAction m_Player_AltTur;
-    private readonly InputAction m_Player_AltFire;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -522,10 +291,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Turn => m_Wrapper.m_Player_Turn;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
-        public InputAction @turretTurn => m_Wrapper.m_Player_turretTurn;
-        public InputAction @AltMove => m_Wrapper.m_Player_AltMove;
-        public InputAction @AltTur => m_Wrapper.m_Player_AltTur;
-        public InputAction @AltFire => m_Wrapper.m_Player_AltFire;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -544,18 +309,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
-            @turretTurn.started += instance.OnTurretTurn;
-            @turretTurn.performed += instance.OnTurretTurn;
-            @turretTurn.canceled += instance.OnTurretTurn;
-            @AltMove.started += instance.OnAltMove;
-            @AltMove.performed += instance.OnAltMove;
-            @AltMove.canceled += instance.OnAltMove;
-            @AltTur.started += instance.OnAltTur;
-            @AltTur.performed += instance.OnAltTur;
-            @AltTur.canceled += instance.OnAltTur;
-            @AltFire.started += instance.OnAltFire;
-            @AltFire.performed += instance.OnAltFire;
-            @AltFire.canceled += instance.OnAltFire;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -569,18 +322,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
-            @turretTurn.started -= instance.OnTurretTurn;
-            @turretTurn.performed -= instance.OnTurretTurn;
-            @turretTurn.canceled -= instance.OnTurretTurn;
-            @AltMove.started -= instance.OnAltMove;
-            @AltMove.performed -= instance.OnAltMove;
-            @AltMove.canceled -= instance.OnAltMove;
-            @AltTur.started -= instance.OnAltTur;
-            @AltTur.performed -= instance.OnAltTur;
-            @AltTur.canceled -= instance.OnAltTur;
-            @AltFire.started -= instance.OnAltFire;
-            @AltFire.performed -= instance.OnAltFire;
-            @AltFire.canceled -= instance.OnAltFire;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -603,9 +344,5 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
-        void OnTurretTurn(InputAction.CallbackContext context);
-        void OnAltMove(InputAction.CallbackContext context);
-        void OnAltTur(InputAction.CallbackContext context);
-        void OnAltFire(InputAction.CallbackContext context);
     }
 }

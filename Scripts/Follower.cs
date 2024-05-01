@@ -37,10 +37,10 @@ public class Follower : MonoBehaviour
         agent.isStopped = false;
         agent.SetDestination(target.position);
         //Debug.Log(agent.remainingDistance);
-        if (agent.remainingDistance <= 10.4f)
+        /*if (agent.remainingDistance <= 10.4f)
         {
             agent.isStopped = true;
-        }
+        }*/
 
         if (agent.velocity != Vector3.zero)
         {
@@ -51,7 +51,7 @@ public class Follower : MonoBehaviour
             {
                 trackL.Add(Instantiate(tracks).GetComponent<Transform>());
                 trackL[i].rotation = Quaternion.LookRotation(transform.forward);
-                trackL[i].rotation = Quaternion.Euler(trackL[i].rotation.eulerAngles.x + 90f, trackL[i].rotation.eulerAngles.y, trackL[i].rotation.eulerAngles.z);
+                trackL[i].rotation = Quaternion.Euler(trackL[i].rotation.eulerAngles.x, trackL[i].rotation.eulerAngles.y, trackL[i].rotation.eulerAngles.z);
                 trackL[i].position = transform.position;
                 if (track == 1)
                     aSource.Play();
