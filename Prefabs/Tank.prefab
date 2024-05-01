@@ -311,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotatesmooth: 360
+  deadzone: 0.1
   turret: {fileID: 5381227046079164781}
   aSource: {fileID: 621513357324021332}
   wSource: {fileID: 4291453564824293610}
@@ -388,7 +389,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90178d3ecda2958429f7401b22f54c0b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -484,7 +485,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d9985c8b020bcc848bc12ce4f8b56acd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
