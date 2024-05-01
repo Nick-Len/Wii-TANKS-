@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4828699433346968544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921909166586900615}
+  - component: {fileID: 1749871661445282371}
+  m_Layer: 6
+  m_Name: Navigation (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1921909166586900615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828699433346968544}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3130474, y: -0.03856975, z: -0.086631455}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7322788442947260908}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1749871661445282371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828699433346968544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.41666666
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 9c0e91dd7ea91b048a8ad37a243c7b3d, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &8350364366298058934
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +107,7 @@ Transform:
   - {fileID: 8137826514593959173}
   - {fileID: 5910626586157852952}
   - {fileID: 4887907640416993296}
+  - {fileID: 1921909166586900615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &6902782632344795476
@@ -156,10 +220,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aSource: {fileID: 6902782632344795476}
   btank: 1
-  gtank: 0
+  greytank: 0
   ytank: 0
   ptank: 0
-  Gtank: 0
+  greentank: 0
 --- !u!114 &4307309528772100693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -322,7 +386,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -401,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -480,7 +544,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -559,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -638,7 +702,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -717,7 +781,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -796,7 +860,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -875,7 +939,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1108,7 +1172,7 @@ PrefabInstance:
     - target: {fileID: 6872409587442348225, guid: fddc16f31ca9aaf46a2583bd0522569a,
         type: 3}
       propertyPath: m_IgnoreFromBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

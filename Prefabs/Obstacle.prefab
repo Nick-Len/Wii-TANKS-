@@ -147,7 +147,6 @@ GameObject:
   m_Component:
   - component: {fileID: 564720934342229649}
   - component: {fileID: 6872409587442348225}
-  - component: {fileID: 8153269182422316246}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Wall
@@ -191,19 +190,3 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!208 &8153269182422316246
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6064105868298277023}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 1.3, y: 1.3, z: 1.3}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -1.3, y: 1.3, z: 1.3}
-  m_TimeToStationary: 0.5
